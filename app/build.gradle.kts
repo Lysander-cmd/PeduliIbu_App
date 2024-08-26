@@ -51,4 +51,8 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.firebase:firebase-auth-ktx:22.3.1")
     implementation ("com.google.firebase:firebase-storage-ktx:20.3.0")
+
+
+    //Image or page Dot Indicator
+    implementation("com.tbuonomo:dotsindicator:4.3")
 }
