@@ -2,43 +2,73 @@ package com.example.peduliibu_app.Authenticate.Login
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.peduliibu_app.Authenticate.Register.RegisterActivity
 import com.example.peduliibu_app.MainActivity
 import com.example.peduliibu_app.R
+import com.example.peduliibu_app.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
+    lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_login)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        setContentView(binding.root)
+
+        auth = FirebaseAuth.getInstance()
+
+
+        binding.tvToRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.loginButton.setOnClickListener {
+            val email = binding.edtEmailLogin.text.toString().trim()
+            val password = binding.edtPasswordLogin.text.toString().trim()
+
+            //Validasi email
+            if (email.isEmpty()) {
+                binding.edtEmailLogin.error = "Email Harus Diisi"
+                binding.edtEmailLogin.requestFocus()
+                return@setOnClickListener
+            }
+
+            //Validasi email tidak sesuai
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.edtPasswordLogin.error = "Email Tidak Valid"
+                binding.edtPasswordLogin.requestFocus()
+                return@setOnClickListener
+            }
+
+            //Validasi password
+            if (password.isEmpty()) {
+                binding.edtPasswordLogin.error = "Password Harus Diisi"
+                binding.edtPasswordLogin.requestFocus()
+                return@setOnClickListener
+            }
+
+            loginFirebase(email, password)
         }
     }
+
     private fun loginFirebase(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
-                    if (email == "admin@gmail.com") {
-                        Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, MainActivity::class.java) //Dummy
-                        startActivity(intent)
-                    } else {
                         Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     }
-                } else {
+                 else {
                     Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
 
