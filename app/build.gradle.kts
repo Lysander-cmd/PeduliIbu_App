@@ -34,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -55,4 +58,7 @@ dependencies {
 
     //Image or page Dot Indicator
     implementation("com.tbuonomo:dotsindicator:4.3")
+
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
 }
