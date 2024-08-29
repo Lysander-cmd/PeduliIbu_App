@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/openingNutritionFragment">
+
+    <fragment
+        android:id="@+id/openingNutritionFragment"
+        android:name="com.example.peduliibu_app.Fragment.NutritionFragment.OpeningNutritionFragment"
+        android:label="OpeningNutritionFragment">
+        <action
+            android:id="@+id/action_openingNutritionFragment_to_nutritionFragment"
+            app:destination="@id/nutritionFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_openingNutritionFragment_to_customNutritionFragment"-->
+<!--            app:destination="@id/customNutritionFragment" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/nutritionFragment"
+        android:name="com.example.peduliibu_app.Fragment.NutritionFragment.NutritionFragment.NutritionFragment"
+        android:label="NutritionFragment" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/customNutritionFragment"-->
+<!--        android:name="com.example.peduliibu_app.Fragment.NutritionFragment.CustomNutritionFragment"-->
+<!--        android:label="CustomNutritionFragment" />-->
+
+</navigation>

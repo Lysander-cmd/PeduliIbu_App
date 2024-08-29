@@ -61,4 +61,15 @@ dependencies {
 
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
+    implementation  ("androidx.gridlayout:gridlayout:1.0.0")
+
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.11.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
+
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.0")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.7.0")
+
+
+
 }

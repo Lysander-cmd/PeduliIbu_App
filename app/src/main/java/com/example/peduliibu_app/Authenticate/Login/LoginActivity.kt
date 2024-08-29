@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.peduliibu_app.Authenticate.Register.RegisterActivity
+import com.example.peduliibu_app.Fragment.NutritionFragment.NutritionFragment.NutritionFragment
 import com.example.peduliibu_app.MainActivity
 import com.example.peduliibu_app.R
 import com.example.peduliibu_app.databinding.ActivityLoginBinding

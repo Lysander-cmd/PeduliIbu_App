@@ -16,6 +16,6 @@
     <color name="purpleCCCFFF">#CCCFFF</color>
     <color name="greentosca">#55D4BA</color>
     <color name="bg">#FAFAFA</color>
-
+    <color name="transparent">#00000000</color>
 
 </resources>

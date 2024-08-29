@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/opening_nutrition_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragment.NutritionFragment.OpeningNutritionFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ellipse3"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center_vertical"
+            android:text="Pemilihan Gizi\ndan Nutrisi"
+            android:textColor="@color/greentosca"
+            android:textSize="30dp">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center_vertical"
+            android:text="Dengan menjaga pola makan, kita \ndapat mencegah terjadinya stunting \npada bayi. Hal ini bisa diatasi dengan \nprotein, vitamin, gizi, dan serat yang \ncukup."
+            android:textColor="#22554A"
+            android:textSize="15dp">
+        </TextView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/recommendation_menu_card"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="10dp">
+
+                        <ImageView
+                            android:id="@+id/gambarInformation1"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@null"
+                            android:backgroundTint="#CCCFFF"
+                            android:importantForAccessibility="no"
+                            android:importantForAutofill="yes"
+                            android:scaleType="centerCrop"
+                            android:layout_gravity="center"
+                            android:src="@drawable/indian" />
+                    </androidx.cardview.widget.CardView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp">
+                        <TextView
+                            android:id="@+id/rekomendasimenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:text="Rekomendasi Menu"
+                            android:textColor="@color/greentosca"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/custom_menu_card"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginTop="80dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="10dp">
+
+                        <ImageView
+                            android:id="@+id/gambarInformation2"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@null"
+                            android:backgroundTint="#CCCFFF"
+                            android:importantForAccessibility="no"
+                            android:importantForAutofill="yes"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/indonesian" />
+                    </androidx.cardview.widget.CardView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp">
+                        <TextView
+                            android:id="@+id/custommenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:text="Custom Menu"
+                            android:textColor="@color/greentosca"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:cardCornerRadius="30dp"
+            android:layout_margin="50dp"
+            android:backgroundTint="@color/greentosca"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Pilih"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold">
+
+            </TextView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
