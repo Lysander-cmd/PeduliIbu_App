@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:title="beranda"
-        android:icon="@drawable/icon_beranda"/>
-    <item
-        android:title="gizi"
-        android:icon="@drawable/icon_gizi"/>
-    <item
-        android:title="profil"
-        android:icon="@drawable/icon_profil"/>
 <!--    <item-->
-<!--        android:id="@+id/bottom_home"-->
 <!--        android:title="beranda"-->
-<!--        android:icon="@drawable/baseline_home_24"/>-->
-
+<!--        android:icon="@drawable/icon_beranda"/>-->
 <!--    <item-->
-<!--        android:id="@+id/bottom_stream"-->
 <!--        android:title="gizi"-->
 <!--        android:icon="@drawable/icon_gizi"/>-->
-
 <!--    <item-->
-<!--        android:id="@+id/bottom_profile"-->
 <!--        android:title="profil"-->
-<!--        android:icon="@drawable/icon_profile"/>-->
+<!--        android:icon="@drawable/icon_profil"/>-->
+    <item
+        android:id="@+id/nav_home"
+        android:title="beranda"
+        android:icon="@drawable/icon_beranda"/>
+
+    <item
+        android:id="@+id/nav_nutrition"
+        android:title="gizi"
+        android:icon="@drawable/icon_gizi"/>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:title="profil"
+        android:icon="@drawable/icon_profil"/>
 </menu>
