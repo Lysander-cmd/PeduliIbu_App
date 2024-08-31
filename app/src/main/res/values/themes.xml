@@ -1,8 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.PeduliIbu_App" parent="Theme.Material3.DayNight.NoActionBar">
-         Customize your light theme here.
-         <item name="colorPrimary">@color/greentosca</item>
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/greentosca</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="Theme.PeduliIbu_App" parent="Base.Theme.PeduliIbu_App" />
