@@ -4,16 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.peduliibu_app.Authenticate.Opening.StatusActivity
 import com.example.peduliibu_app.Authenticate.Register.RegisterActivity
 import com.example.peduliibu_app.Authenticate.SessionManager
-import com.example.peduliibu_app.Fragment.NutritionFragment.NutritionFragment.NutritionFragment
 import com.example.peduliibu_app.MainActivity
-import com.example.peduliibu_app.R
 import com.example.peduliibu_app.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -69,6 +63,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
                     sessionManager.createLoginSession(email)
+                    sessionManager.setFirstLoginCompleted()
                     Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
