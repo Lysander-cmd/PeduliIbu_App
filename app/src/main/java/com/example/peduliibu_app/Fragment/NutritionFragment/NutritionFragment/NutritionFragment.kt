@@ -64,7 +64,6 @@ class NutritionFragment : Fragment() {
                 }
             }
 
-            // Mengacak daftar makanan dan memilih satu item untuk setiap kategori
             val randomizedMenu = categories.mapNotNull { category ->
                 foodList.filter { it.category == category }.randomOrNull()
             }

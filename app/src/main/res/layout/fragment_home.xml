@@ -96,7 +96,7 @@
                     android:layout_marginTop="35dp"
                     android:background="@drawable/home_background"
                     app:strokeColor="@color/grey_95969D"
-                    app:strokeWidth="20dp">
+                    android:elevation="4dp">
 
                     <FrameLayout
                         android:layout_width="82dp"
@@ -110,6 +110,7 @@
                             android:layout_height="47dp"
                             android:layout_gravity="center|top"
                             android:backgroundTint="@color/white"
+
                             android:text="Button"
                             app:cornerRadius="10dp"
                             app:strokeColor="@color/grey_cacace"
@@ -340,6 +341,7 @@
                 android:layout_width="320dp"
                 android:layout_height="133dp"
                 android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/home_background"
                 android:backgroundTint="@color/greentosca">
 
