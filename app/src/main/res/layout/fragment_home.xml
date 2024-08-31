@@ -36,8 +36,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Hi, Rainers
-                    lorem ipsum lorm iplium"
+                        android:text="Selamat Datang"
                         android:textColor="@color/white"
                         android:textStyle="bold">
                     </TextView>

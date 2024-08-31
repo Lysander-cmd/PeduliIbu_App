@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.peduliibu_app.Authenticate.Opening.StatusActivity
 import com.example.peduliibu_app.Authenticate.Register.RegisterActivity
+import com.example.peduliibu_app.Authenticate.SessionManager
 import com.example.peduliibu_app.Fragment.NutritionFragment.NutritionFragment.NutritionFragment
 import com.example.peduliibu_app.MainActivity
 import com.example.peduliibu_app.R
@@ -19,13 +20,14 @@ import com.google.firebase.auth.FirebaseAuth
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
-
+    private lateinit var sessionManager: SessionManager
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
+        sessionManager = SessionManager(this)
 
 
         binding.tvToRegister.setOnClickListener {
@@ -66,14 +68,14 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
-                        Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, StatusActivity::class.java)
-                        startActivity(intent)
-                    }
-                 else {
+                    sessionManager.createLoginSession(email)
+                    Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
                     Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
-
             }
     }
 }

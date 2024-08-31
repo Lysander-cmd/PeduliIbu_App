@@ -2,28 +2,35 @@ package com.example.peduliibu_app.SplashScreen
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.peduliibu_app.Authenticate.Login.LoginActivity
+import com.example.peduliibu_app.Authenticate.Opening.StatusActivity
+import com.example.peduliibu_app.Authenticate.SessionManager
+import com.example.peduliibu_app.MainActivity
 import com.example.peduliibu_app.R
 
 class SplashScreenActivity : AppCompatActivity() {
-    private val SPLASH_TIME_OUT: Long = 1500 // 1.5 seconds
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        val ivNote = findViewById<ImageView>(R.id.iv_note)
-        ivNote.alpha = 0f
-        ivNote.animate().setDuration(1500).alpha(1f).withEndAction {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        sessionManager = SessionManager(this)
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            if (sessionManager.isLoggedIn()) {
+                startActivity(Intent(this, MainActivity::class.java))
+            } else {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
             finish()
-        }
+        }, 2000) // Delay 2 detik
     }
 }
