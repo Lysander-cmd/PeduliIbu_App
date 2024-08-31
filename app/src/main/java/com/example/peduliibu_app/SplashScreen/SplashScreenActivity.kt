@@ -26,11 +26,15 @@ class SplashScreenActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             if (sessionManager.isLoggedIn()) {
-                startActivity(Intent(this, MainActivity::class.java))
+                if (sessionManager.isFirstLogin()) {
+                    startActivity(Intent(this, StatusActivity::class.java))
+                } else {
+                    startActivity(Intent(this, MainActivity::class.java))
+                }
             } else {
                 startActivity(Intent(this, LoginActivity::class.java))
             }
             finish()
-        }, 2000) // Delay 2 detik
+        }, 2000)
     }
-}
+    }
