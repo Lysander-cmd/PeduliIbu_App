@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
@@ -17,13 +16,16 @@
         android:theme="@style/Theme.PeduliIbu_App"
         tools:targetApi="31">
         <activity
+            android:name=".Fragment.ScheduleFragment.ScheduleActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen.SplashScreenActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Authenticate.Register.RegisterActivity"
@@ -36,8 +38,8 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
+
         <receiver
             android:name=".Fragment.ScheduleFragment.CleaningReminderReceiver"
             android:enabled="true"
