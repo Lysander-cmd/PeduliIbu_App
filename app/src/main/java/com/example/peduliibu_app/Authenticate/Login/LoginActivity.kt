@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.peduliibu_app.Authenticate.Opening.StatusActivity
 import com.example.peduliibu_app.Authenticate.Register.RegisterActivity
 import com.example.peduliibu_app.Fragment.NutritionFragment.NutritionFragment.NutritionFragment
 import com.example.peduliibu_app.MainActivity
@@ -66,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
                         Toast.makeText(this, "Selamat datang $email", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, StatusActivity::class.java)
                         startActivity(intent)
                     }
                  else {
